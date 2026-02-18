@@ -2,7 +2,7 @@ name: Generate Pacman Animation
 
 on:
   schedule:
-    - cron: "0 */12 * * *" # a cada 12 horas
+    - cron: "0 */12 * * *"
   workflow_dispatch:
   push:
     branches:
@@ -10,11 +10,11 @@ on:
 
 jobs:
   generate:
-    permissions:
-      contents: write
-
     runs-on: ubuntu-latest
     timeout-minutes: 5
+
+    permissions:
+      contents: write
 
     steps:
       - name: Checkout repository
